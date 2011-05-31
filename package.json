@@ -1,0 +1,19 @@
+{ "author": "Isaac Wolkerstorfer <agnoster@gmail.com> (http://agnoster.net/)"
+, "name": "nosey"
+, "description": "Nosey - Continuous Integration server in Node"
+, "version": "0.0.0"
+, "homepage": "https://github.com/agnoster/nosey"
+, "repository":
+  { "url": ""
+  }
+, "engines":
+  { "node": "~0.4.7"
+  }
+, "dependencies":
+  { "express": "~2.3.10"
+  , "socket.io": "~0.6.18"
+  }
+, "devDependencies":
+  { "coffee-script": "~1.0.0"
+  }
+}
