@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-require('../lib/nosey')
+var nosey = require('../lib/nosey')
+
+nosey.watchDirectory(process.env['HOME'] + '/.nosey/')

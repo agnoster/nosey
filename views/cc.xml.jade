@@ -1,0 +1,16 @@
+Projects
+  - for (var path in projects)
+    - var project = projects[path]
+    - if (project.last_run)
+      Project(
+        activity= project.running ? "Building" : "Sleeping"
+        lastBuildStatus= project.last_run.code ? "Failure" : "Success"
+        lastBuildTime= new Date(project.last_run.stop).toUTCString()
+        name= project.name
+        nextBuildTime= new Date(project.next_run).toUTCString()
+      )
+    - else
+      Project(
+        activity= project.running ? "Building" : "Sleeping"
+        name= project.name
+      )

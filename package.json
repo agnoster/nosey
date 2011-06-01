@@ -12,8 +12,17 @@
 , "dependencies":
   { "express": "~2.3.10"
   , "socket.io": "~0.6.18"
+  , "jade": "~0.11.0"
+  , "underscore": "~1.1.6"
   }
 , "devDependencies":
-  { "coffee-script": "~1.0.0"
+  { "coffee-script": "*"
+  , "vows": "*"
+  }
+, "bin": "./bin/nosey"
+, "scripts":
+  { "test": "vows test/* --spec"
+  , "postinstall": "mkdir -p ~/.nosey"
+  , "start": "node lib/server.js"
   }
 }
