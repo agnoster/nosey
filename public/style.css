@@ -1,0 +1,11 @@
+.ok {
+  background: green;
+}
+
+.err {
+  background: red;
+}
+
+.running {
+  background: gray;
+  }
