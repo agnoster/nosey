@@ -1,0 +1,75 @@
+
+/* -- variables ?= defaults -- */
+var_grid_width   ?= 960px
+var_grid_gutter  ?= 20px
+var_grid_columns ?= 12
+var_grid_debug   ?= false
+
+/* -- definitions -- */
+body
+	min-width var_grid_width
+
+.clear
+	clear both
+	display block
+	overflow hidden
+	visibility hidden
+	width 0
+	height 0
+
+.clearfix:before 
+.clearfix:after
+	content '\0020'
+	display block
+	overflow hidden
+	visibility hidden
+	width 0
+	height 0
+	
+.clearfix:after
+	clear both
+
+.clearfix
+	zoom 1
+
+
+/* -- mixins -- */
+container()
+	width var_grid_width
+	margin-left auto
+	margin-right auto
+	if var_grid_debug
+		background-image url('http://960.gs/img/'+var_grid_columns+'_col.gif')
+
+grid_width(n, c = var_grid_columns, g = var_grid_gutter)
+	width (var_grid_width / c * n) - g
+	
+grid_content()
+	display inline
+	float left
+	margin-left (var_grid_gutter / 2)
+	margin-right (var_grid_gutter / 2)
+
+grid_(n, c = var_grid_columns, g = var_grid_gutter)
+	grid_width(n, c, g)
+	grid_content()
+	
+prefix_(n, c = var_grid_columns, g = var_grid_gutter)
+	padding-left ((var_grid_width / c * n) + (g / 2))
+
+suffix_(n, c = var_grid_columns, g = var_grid_gutter)
+	padding-right ((var_grid_width / c * n) + (g / 2))
+	
+push_(n, c = var_grid_columns)
+	position relative
+	left (var_grid_width / c * n)
+
+pull_(n, c = var_grid_columns)
+	position relative
+	left (- (var_grid_width / c * n))
+
+alpha()
+	margin-left 0
+
+omega()
+	margin-right 0

@@ -1,25 +1,28 @@
-# Nosey - NodeJS CI
+# Nosey - NodeJS CI, testing your code all the time
 
-Nosey has one aim: stupid simple continuous integration. Set up Nosey on a server, point it to any projects you want it to watch, and sleep tight knowing any build failures will be reported as soon as they happen.
+Nosey has one aim: crazy simple continuous integration. I was always too lazy to actually do CI, so consider this by lazybutts, for lazybutts. If you're a CI pro running Jenkins/CruiseControl/whatever already, this probably isn't for you.
+
+Set up Nosey on a server, point it to any projects you want it to watch, and sleep tight knowing any build failures will be reported as soon as they happen.
 
     npm install -g nosey
     cd ~/.nosey
     ln -s /path/to/your/project
     open http://localhost:4343/
 
-You just symlink your project into `~/.nosey`, and Nosey will watch it vigilantly.
+## Assumptions
 
-You can configure the behavior for Nosey with a `nosey.js` in your project root, but it shouldn't be necessary in most cases.
+Currently, nosey makes the following assumptions:
 
-The one thing you might need - if Nosey can't autodetect it - is to specify what command to run to test. Here's an example `nosey.js`:
+1. Each project is symlinked in `~/.nosey`
+2. Each project can be tested by running `npm test`
 
-    { "name": "My Awesome Project"
-    , "test": "bundle exec rake spec"
-    , "interval": 300
-    }
+That's it. Every hour, for every project detected, nosey will run `npm test`. I'm trying to be as close to Pow in terms of usability as possible.
 
-However, Nosey can autodetect the following cases:
+## Roadmap
+
+In the future, nosey will add further autodetection to support the following use cases:
 
 - `package.json` -> `npm test`
-- Rails project -> `rake db:migrate && rake spec`
-- Makefile -> `make test`
+- `Rakefile` -> `rake spec`
+- `Gemfile` -> prefix `bundle exec`
+- `Makefile` -> `make test`

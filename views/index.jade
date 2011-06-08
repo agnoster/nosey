@@ -1,1 +1,15 @@
-h1 Welcome to Nosey
+h1 nosey is running
+#projects
+  - for (path in projects)
+    - var project = projects[path]
+    .project(id=project.name, data-status=project.status, data-running=(project.running ? "true" : null))
+      .icon &nbsp;
+      .label= project.name
+
+#project-info.empty
+  .help Click on a project for more info
+  .info 
+    span.runstatus Not run yet
+    button.rerun Run now
+  pre#stdout
+

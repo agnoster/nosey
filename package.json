@@ -14,6 +14,8 @@
   , "socket.io": "~0.6.18"
   , "jade": "~0.11.0"
   , "underscore": "~1.1.6"
+  , "stylus": "~0.13.3"
+  , "nib": "~0.0.8"
   }
 , "devDependencies":
   { "coffee-script": "*"
@@ -23,6 +25,6 @@
 , "scripts":
   { "test": "vows test/* --spec"
   , "postinstall": "mkdir -p ~/.nosey"
-  , "start": "node lib/server.js"
+  , "start": "node app.js"
   }
 }
