@@ -34,6 +34,15 @@ $('.rerun').live('click', function() {
 
 
 function update_active() {
+  var statusmark = '✔'
+  for (var path in projects) {
+    if (projects[path] && projects[path].status && projects[path].status == 'err')
+      statusmark = '✘'
+  }
+
+  $('#favicon').attr('href', '/images/' + (statusmark == '✔' ? 'green' : 'red') + '.png')
+  document.title = statusmark + ' nosey'
+
   if (!active || !active.id || !projects[active.id]) return
 
   var project = projects[active.id]
