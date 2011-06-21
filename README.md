@@ -16,13 +16,23 @@ Currently, nosey makes the following assumptions:
 1. Each project is symlinked in `~/.nosey`
 2. Each project can be tested by running `npm test`
 
-That's it. Every hour, for every project detected, nosey will run `npm test`. I'm trying to be as close to Pow in terms of usability as possible.
+That's it. Every hour, for every project detected, nosey will run `npm test`. I'm trying to be as close to Pow in terms of ease-of-use as possible. It should be a fire-and-forget thing.
 
 ## Roadmap
 
 In the future, nosey will add further autodetection to support the following use cases:
 
-- `package.json` -> `npm test`
-- `Rakefile` -> `rake spec`
-- `Gemfile` -> prefix `bundle exec`
 - `Makefile` -> `make test`
+- `package.json` -> `npm test`
+- `Rakefile` -> `rake spec` or `rake test` (introspect the Rakefile?)
+- `Gemfile` -> prefix `bundle exec`
+- `.rvmrc` -> run `rvm` if available
+
+Alse want to add:
+
+- Automatic update via version control
+- Listen to webhooks for updates
+- More notifications:
+  - HTML5 browser notifications
+  - Email
+  - Twitter (?)
