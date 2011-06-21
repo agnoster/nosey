@@ -27,12 +27,12 @@ h1
     bold-button(#777)
 
   [data-status="ok"]
-    bold-button(#290)
+    bold-button(#180)
     .icon
       background url(/images/ok.png)
 
   [data-status="err"]
-    bold-button(#920)
+    bold-button(#810)
     .icon
       background url(/images/err.png)
 
@@ -74,9 +74,10 @@ h1
   .help
     color #aaa
     display none
-    padding 50px
+    padding 200px 0 
     text-align center
-    margin auto
+    background #f7f7f7
+    border-radius 10px
 
   &.empty
     .help
@@ -85,29 +86,32 @@ h1
       display none
 
   #stdout
+    clear both
     color #839496
     background #002b36
-    overflow auto
+    overflow hidden
     padding-bottom 1em
     border-radius 5px
-    height 400px
+    min-height 400px
+    width 100%
     padding 10px
     margin 0 -10px
 
   .rerun
-    bold-button(#290)
-    margin-left: 1ex
-    height: 40px
+    bold-button(#469)
+    cursor pointer
+    margin-left 1ex
+    height 40px
 
   .rerun[disabled]
-    opacity: 0.1
+    opacity 0.1
 
   .info, .rerun
-    font-size: 18px
+    font-size 18px
 
   .info
-    float: right
-    margin-right: -10px
-    margin-bottom: 1em
-    height: 40px
+    float right
+    margin-right -10px
+    margin-bottom 1em
+    height 40px
 
