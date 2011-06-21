@@ -111,6 +111,8 @@ function ansi2html(str) {
       }
       tag += '<span style="' + style() + '">'
       open = true
+    } else {
+      props = {}
     }
 
     return tag
