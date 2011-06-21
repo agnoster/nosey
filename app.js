@@ -31,7 +31,7 @@ app.get('/cc.xml', function(req, res) {
   res.render('cc.xml.jade', { projects: nosey.projects, layout: false })
 })
 
-app.listen(3000)
+app.listen(4343)
 
 function broadcast(project) {
   var client
