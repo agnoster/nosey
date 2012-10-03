@@ -47,7 +47,7 @@ function send_project(client, project) {
   delete(p.child)
   delete(p.timer)
 
-  client.send(p)
+  client.emit('project', p)
 }
 
 socket.on('connection', function(client) {

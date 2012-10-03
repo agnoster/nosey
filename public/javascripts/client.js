@@ -1,12 +1,12 @@
-var socket = new io.Socket()
+var socket = io.connect('http://localhost:4343/')
 var projects = {}
 var active = null
 
-socket.connect()
-socket.on('message', function(project) {
+socket.on('project', function(project) {
+  console.log('receive', project)
   var el = document.getElementById(project.name)
   if (project.status == 'DELETED') {
-    console.log(project.name)
+    console.log('delete', project.name)
     if (active && active.id == project.name) {
       active = null
       $('#project-info').addClass('empty')
