@@ -1,13 +1,13 @@
 { "author": "Isaac Wolkerstorfer <agnoster@gmail.com> (http://agnoster.net/)"
 , "name": "nosey"
 , "description": "Stupid simple Continuous Integration server"
-, "version": "0.0.3"
+, "version": "0.0.4"
 , "homepage": "https://github.com/agnoster/nosey"
 , "repository":
   { "url": "https://github.com/agnoster/nosey.git"
   }
 , "engines":
-  { "node": "~0.4.7"
+  { "node": ">= 0.4"
   }
 , "dependencies":
   { "express": "~2.3.10"
