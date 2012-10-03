@@ -11,12 +11,12 @@
   }
 , "dependencies":
   { "express": "~2.3.10"
-  , "socket.io": "~0.6.18"
+  , "socket.io": "~0.9.10"
   , "jade": "~0.11.0"
   , "underscore": "~1.1.6"
   , "stylus": "~0.13.3"
   , "nib": "~0.0.8"
-  , "forever": "~0.5.6"
+  , "forever": "~0.10.0"
   }
 , "devDependencies":
   { "coffee-script": "*"
